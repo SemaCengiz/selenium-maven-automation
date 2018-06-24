@@ -68,7 +68,8 @@ System.out.println("Step Fail keyword :" + keyword + "searchReturn" + countResul
 		}
 driver.close();
 
-System.out.println("Test complated at " +LocalDateTime.now());
+System.out.println("Test complated at  today's" +LocalDateTime.now());
+System.out.println("if everything pass soo we are good to go ");
 
 
 	}
