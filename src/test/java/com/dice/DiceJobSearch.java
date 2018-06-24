@@ -1,5 +1,6 @@
 package com.dice;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,7 +44,7 @@ public class DiceJobSearch {
 		driver.findElement(By.id("search-field-keyword")).sendKeys(keyword);
 
 		// finding the location
-		String location = "Chicago,IL";
+		String location = "Chicago,IL 60632";
 		driver.findElement(By.id("search-field-location")).clear();// clearing
 		driver.findElement(By.id("search-field-location")).sendKeys(location);
 
@@ -60,13 +61,15 @@ public class DiceJobSearch {
 		// ensure count is more than 0 ;
 		int countResult = Integer.parseInt(count.replace(",", ""));
 		if (countResult > 0) {
-			System.out.println(
-					" Stepp Pass keyword :" + keyword + "searchReturn" + countResult + "result in " + location);
+System.out.println(" Stepp Pass keyword :" + keyword + "searchReturn" + countResult + "result in " + location);
 		} else {
-			System.out
-					.println("Step Fail keyword :" + keyword + "searchReturn" + countResult + "result in " + location);
+System.out.println("Step Fail keyword :" + keyword + "searchReturn" + countResult + "result in " + location);
 
 		}
+driver.close();
+
+System.out.println("Test complated at " +LocalDateTime.now());
+
 
 	}
 }
